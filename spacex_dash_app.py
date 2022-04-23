@@ -20,24 +20,19 @@ lsites.append({'label': 'All Sites', 'value': 'All Sites'})
 for site in uniquelaunchsites:
  lsites.append({'label': site, 'value': site})
 
-
-
+ 
 app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
                                         style={'textAlign': 'center', 'color': '#503D36',
                                                'font-size': 40}),
-
-
-
-
+                                #Create a dropdown
                                 dcc.Dropdown(id='site_dropdown',options=lsites,placeholder='Select a Launch Site here', searchable = True , value = 'All Sites'),
                                 html.Br(),
-
-
+                                
                                 html.Div(dcc.Graph(id='success-pie-chart')),
                                 html.Br(),
 
                                 html.P("Payload range (Kg):"),
-
+                                #Add a range slider
                                 dcc.RangeSlider(
                                     id='payload_slider',
                                     min=0,
